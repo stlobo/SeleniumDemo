@@ -1,0 +1,10 @@
+package WebDriverSuite.PACK01;
+
+public class PopUpHandel {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

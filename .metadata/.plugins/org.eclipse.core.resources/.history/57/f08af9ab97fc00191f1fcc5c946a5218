@@ -1,0 +1,45 @@
+package WebDriverSuite.PACK01;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class PopUpHandel {
+
+	public static void main(String[] args) {
+		
+		
+				WebDriverManager.chromedriver().setup();
+				WebDriver driver = new ChromeDriver();
+				driver.get("http://hdfcbank.com");
+				driver.manage().window().maximize();
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+				
+				
+
+				System.out.println("----Generating window ids from first window----");
+				Set<String> winids = driver.getWindowHandles();
+				Iterator<String> iterate = winids.iterator();
+
+				String first_window = iterate.next();
+				System.out.println(first_window);
+
+				driver.findElement(By.xpath("//img[@class='popupCloseButton']")).click();
+				driver.findElement(By.xpath("//span[@class='linkedin-icon']")).click();
+				
+				
+				
+
+				
+				driver.quit();
+
+	}
+
+}

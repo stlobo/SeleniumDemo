@@ -1,0 +1,10 @@
+package testDemo;
+
+public class TyreInterface {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
